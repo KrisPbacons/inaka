@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://di12bndq0i6e6"]
+
+[ext_resource type="Script" uid="uid://dt8idd4nyefk1" path="res://Scripts/fox.gd" id="1_e6g21"]
+[ext_resource type="Texture2D" uid="uid://d1uqbmcrclda7" path="res://Assets/Sprites_Tiles/farmingTilesheetComplete.png" id="2_yj2lq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1jln"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hww6"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llyw2"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myukr"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbn5l"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xrd0"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd0gq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1jln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hww6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llyw2")
+}],
+"loop": true,
+"name": &"eating",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myukr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbn5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xrd0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ii5gc"]
+radius = 33.0
+height = 66.0
+
+[node name="fox" type="CharacterBody2D" unique_id=1893904011]
+script = ExtResource("1_e6g21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=448485158]
+position = Vector2(48.5, -43.999996)
+scale = Vector2(7.0625, 6.4999995)
+sprite_frames = SubResource("SpriteFrames_yd0gq")
+animation = &"eating"
+frame_progress = 0.41282505
+
+[node name="change state" type="Timer" parent="." unique_id=1161860453]
+autostart = true
+
+[node name="walking" type="Timer" parent="." unique_id=992875275]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173738885]
+position = Vector2(52, -35)
+shape = SubResource("CapsuleShape2D_ii5gc")
+
+[connection signal="timeout" from="change state" to="." method="_on_change_state_timeout"]
+[connection signal="timeout" from="walking" to="." method="_on_walking_timeout"]

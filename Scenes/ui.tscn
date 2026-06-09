@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c0kmshh7vrk0l"]
+
+[ext_resource type="Script" uid="uid://yevjwqihngjk" path="res://Scripts/score.gd" id="1_jxero"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jxero"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdvrb"]
+font_size = 30
+
+[node name="ui" type="CanvasLayer" unique_id=1592185394]
+script = ExtResource("1_jxero")
+
+[node name="score_label" type="Label" parent="." unique_id=666139044]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_jxero")
+
+[node name="score_number" type="Label" parent="." unique_id=1961052609]
+offset_left = 92.0
+offset_top = 2.0
+offset_right = 132.0
+offset_bottom = 44.0
+text = "0"
+label_settings = SubResource("LabelSettings_qdvrb")

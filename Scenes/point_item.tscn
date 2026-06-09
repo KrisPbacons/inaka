@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cko8tdiq3hqbp"]
+
+[ext_resource type="Texture2D" uid="uid://b41n180jf0ocl" path="res://Assets/Sprites_Tiles/items_tilesheet.png" id="1_8kwmx"]
+[ext_resource type="Script" uid="uid://5u0rut436a4b" path="res://Scripts/point_item.gd" id="1_vwuax"]
+[ext_resource type="AudioStream" uid="uid://bfsefk1o4tl13" path="res://Assets/audio/coin.wav" id="3_nrdiu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwuax"]
+atlas = ExtResource("1_8kwmx")
+region = Rect2(1182, 313, 130, 154)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrdiu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwuax")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8yk1w"]
+radius = 32.0
+height = 104.0
+
+[sub_resource type="Gradient" id="Gradient_nrdiu"]
+offsets = PackedFloat32Array(0, 0.78781515)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8yk1w"]
+gradient = SubResource("Gradient_nrdiu")
+fill = 1
+fill_from = Vector2(0.52478635, 0.4905983)
+
+[node name="Area2D" type="Area2D" unique_id=1326927902]
+script = ExtResource("1_vwuax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1147943714]
+position = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_nrdiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1364006985]
+shape = SubResource("CapsuleShape2D_8yk1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1796703108]
+stream = ExtResource("3_nrdiu")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2042125266]
+position = Vector2(1, 4)
+scale = Vector2(3.6796873, 3.5625)
+color = Color(0.21770406, 0.6080437, 9.62615e-07, 1)
+energy = 3.01
+texture = SubResource("GradientTexture2D_8yk1w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
