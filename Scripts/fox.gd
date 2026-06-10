@@ -7,6 +7,10 @@ var ydir = 1 #1 = down -1 = up
 var speed = 15000
 var motion : Vector2
 var moving_vertical_horizontal = 1 #1 = horizontal 2 = vertical
+var min_x = 0
+var max_x = 500
+var min_y = 0
+var max_y = 500
 
 func _ready() -> void:
 	walking = true
@@ -48,6 +52,10 @@ func _physics_process(_delta):
 		motion = Vector2.ZERO
 	velocity = motion * _delta
 	move_and_slide()
+	
+# Force the sprite's position to stay within the area
+	position.x = clamp(position.x, min_x, max_x)
+	position.y = clamp(position.y, min_y, max_y)
 
 func _on_change_state_timeout() -> void:
 	var waittime = 1
