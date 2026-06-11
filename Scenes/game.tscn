@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://mtbgdgiky08m" path="res://Assets/Sprites_Tiles/fix3.png" id="6_i6g32"]
 [ext_resource type="Texture2D" uid="uid://bdx1ea1ha62gh" path="res://Assets/Sprites_Tiles/animals_tilesheet.png" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://di12bndq0i6e6" path="res://Scenes/fox.tscn" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://c41e502y7dho4" path="res://Scenes/npc.tscn" id="9_h4fw4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldgsr"]
 texture = ExtResource("5_wowpa")
@@ -1071,6 +1072,9 @@ blend_mode = 1
 
 [node name="fox" parent="." unique_id=1893904011 instance=ExtResource("8_v158k")]
 position = Vector2(283, 1)
+
+[node name="npc" parent="." unique_id=365864225 instance=ExtResource("9_h4fw4")]
+position = Vector2(3, -371)
 
 [connection signal="point_touched" from="point1" to="player/Camera2D/ui" method="_on_point_1_point_touched"]
 [connection signal="point_touched" from="point2" to="player/Camera2D/ui" method="_on_point_1_point_touched"]

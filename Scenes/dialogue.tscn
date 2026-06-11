@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://07y6a16o6lhg"]
+
+[ext_resource type="Script" uid="uid://dnuwn5rx6i8yj" path="res://Scripts/dialogue_player.gd" id="1_5rqxr"]
+
+[sub_resource type="Gradient" id="Gradient_ugw53"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5rqxr"]
+gradient = SubResource("Gradient_ugw53")
+fill_from = Vector2(0.79130435, 0.008695652)
+
+[node name="dialogue" type="Control" unique_id=1602792336]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5rqxr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=97654250]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 134.0
+texture = SubResource("GradientTexture2D_5rqxr")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect" unique_id=1390682009]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 25.0
+text = "Name:"
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect" unique_id=1971922689]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 248.0
+offset_bottom = 127.0
+text = "chatting..."

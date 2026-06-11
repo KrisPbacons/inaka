@@ -1,0 +1,13 @@
+[
+	{"name": "Worker", "text": "Good morning, Itachi! Nice weather today, isn't it?"},
+	{"name": "Itachi", "text": "It certainly is. How are things going around town?"},
+	{"name": "Worker", "text": "Not bad, but the old bridge near the river is starting to look worn out."},
+	{"name": "Itachi", "text": "I've noticed that too. Has it been causing problems?"},
+	{"name": "Worker", "text": "A few travelers have complained about it. It might hurt tourism if we leave it too long."},
+	{"name": "Itachi", "text": "That's good to know. I'll see if we can set aside funds for repairs."},
+	{"name": "Worker", "text": "The townsfolk would appreciate that. A safer bridge means more visitors."},
+	{"name": "Itachi", "text": "Anything else the town needs right now?"},
+	{"name": "Worker", "text": "Some fresh flowers near the station would make a great first impression."},
+	{"name": "Itachi", "text": "I like that idea. Let's make our town even more welcoming."}
+
+]
