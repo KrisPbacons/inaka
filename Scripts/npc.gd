@@ -5,7 +5,7 @@ var current_state = IDLE
 enum {IDLE, NEW_DIR, MOVE}
 var is_roaming = true
 var is_chatting = false
-var player
+var player 
 var player_in_chat_zone = false
 var dir = Vector2.RIGHT
 var start_pos
@@ -15,7 +15,14 @@ func _ready() -> void:
 	start_pos = position
 
 func _process(delta: float) -> void:
-	if current_state == 0 or current_state ==1:
+	if global.weather == "rain":
+		$AnimatedSprite2D.visible = false
+		is_roaming = false
+	else:
+		$AnimatedSprite2D.visible = true
+		is_roaming = true
+		
+	if current_state == 0 or current_state == 1:
 		$AnimatedSprite2D.play("idle")
 	elif current_state == 2 and !is_chatting:
 		if dir.x == -1:
@@ -35,7 +42,7 @@ func _process(delta: float) -> void:
 				dir = choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN])
 			MOVE:
 				move(delta)
-	if Input.is_action_just_pressed("chat"):
+	if Input.is_action_just_pressed("chat") && player_in_chat_zone && !is_chatting:
 		print("Chatting with NPC")
 		$dialogue.start()
 		is_roaming = false
@@ -50,12 +57,14 @@ func move(delta):
 		position += dir * speed * delta
 
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
-	if body.has_method("player"):
+	#if body.has_method("player"):
+	if body.is_in_group("player"):
 		player = body
 		player_in_chat_zone = true
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
-	if body.has_method("player"):
+	#if body.has_method("player"):
+	if body.is_in_group("player"):
 		player_in_chat_zone = false
 
 

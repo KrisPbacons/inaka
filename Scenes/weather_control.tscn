@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://blx3r7mf0aehw"]
+
+[ext_resource type="Script" uid="uid://c5yctnx33utul" path="res://Scripts/weather_control.gd" id="1_nn0bn"]
+[ext_resource type="Texture2D" uid="uid://emx23uppra0h" path="res://Assets/weather/rain.png" id="2_dqswm"]
+
+[node name="weather_control" type="StaticBody2D" unique_id=142798669]
+script = ExtResource("1_nn0bn")
+
+[node name="rain_colour" type="CanvasModulate" parent="." unique_id=48819087]
+color = Color(0.7683069, 0.7683071, 0.76830703, 1)
+
+[node name="rain" type="CPUParticles2D" parent="." unique_id=112076829]
+position = Vector2(476, -1)
+amount = 500
+texture = ExtResource("2_dqswm")
+lifetime = 2.5
+speed_scale = 0.6
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1489314338]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

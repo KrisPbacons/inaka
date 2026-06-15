@@ -7,6 +7,8 @@ const SPEED = 19000.0
 var direction : Vector2
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+func _ready() -> void:
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	handle_state_transitions()
@@ -49,3 +51,5 @@ func perform_state_actions(delta):
 			if animated_sprite_2d.animation == "walk_down":
 				animated_sprite_2d.animation = "idle"
 	
+#func player():
+	#pass

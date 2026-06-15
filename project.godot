@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/image="uid://caplrhu3nmibj"
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*uid://rffqvwsa8xa"
+
 [display]
 
 window/size/viewport_width=1024
