@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://di12bndq0i6e6" path="res://Scenes/fox.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://c41e502y7dho4" path="res://Scenes/npc.tscn" id="9_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://blx3r7mf0aehw" path="res://Scenes/weather_control.tscn" id="10_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://bts2xmtinmo43" path="res://Scenes/growingzone.tscn" id="11_rfjv2"]
+[ext_resource type="PackedScene" uid="uid://cl3btc67k28l" path="res://Scenes/onionseedpack.tscn" id="12_1phco"]
+[ext_resource type="PackedScene" uid="uid://damfk3s84c1r1" path="res://Scenes/carrotseedpack.tscn" id="13_nb51f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldgsr"]
 texture = ExtResource("5_wowpa")
@@ -1080,6 +1083,15 @@ position = Vector2(283, 1)
 
 [node name="npc" parent="." unique_id=365864225 instance=ExtResource("9_h4fw4")]
 position = Vector2(3, -371)
+
+[node name="growingzone" parent="." unique_id=426530720 instance=ExtResource("11_rfjv2")]
+position = Vector2(-1210, 578)
+
+[node name="onionseedpack" parent="." unique_id=451731107 instance=ExtResource("12_1phco")]
+position = Vector2(-1009, 457)
+
+[node name="carrotseedpack" parent="." unique_id=1359928945 instance=ExtResource("13_nb51f")]
+position = Vector2(-895, 465)
 
 [connection signal="point_touched" from="point1" to="player/Camera2D/ui" method="_on_point_1_point_touched"]
 [connection signal="point_touched" from="point2" to="player/Camera2D/ui" method="_on_point_1_point_touched"]
