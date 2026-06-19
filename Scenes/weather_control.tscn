@@ -2,6 +2,39 @@
 
 [ext_resource type="Script" uid="uid://c5yctnx33utul" path="res://Scripts/weather_control.gd" id="1_nn0bn"]
 [ext_resource type="Texture2D" uid="uid://emx23uppra0h" path="res://Assets/weather/rain.png" id="2_dqswm"]
+[ext_resource type="Texture2D" uid="uid://dpifo4b62f0vj" path="res://Assets/weather/snowflake.png" id="3_dqswm"]
+
+[sub_resource type="Gradient" id="Gradient_nn0bn"]
+offsets = PackedFloat32Array(0, 0.8684211)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dqswm"]
+gradient = SubResource("Gradient_nn0bn")
+
+[sub_resource type="Curve" id="Curve_dqswm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.40686274, 0.901566), 0.0, 0.0, 0, 0, Vector2(0.6372549, 0.4451902), 0.0, 0.0, 0, 0, Vector2(0.9607843, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_vbu4v"]
+curve = SubResource("Curve_dqswm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vbu4v"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+gravity = Vector3(200, 500, 0)
+radial_accel_min = -1.0000023
+radial_accel_max = -1.0000023
+damping_min = 5.0
+damping_max = 5.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_vbu4v")
+color_ramp = SubResource("GradientTexture1D_dqswm")
+turbulence_enabled = true
 
 [node name="weather_control" type="StaticBody2D" unique_id=142798669]
 script = ExtResource("1_nn0bn")
@@ -10,6 +43,7 @@ script = ExtResource("1_nn0bn")
 color = Color(0.7683069, 0.7683071, 0.76830703, 1)
 
 [node name="rain" type="CPUParticles2D" parent="." unique_id=112076829]
+visible = false
 position = Vector2(476, -1)
 amount = 500
 texture = ExtResource("2_dqswm")
@@ -25,5 +59,13 @@ scale_amount_max = 10.0
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="snow" type="GPUParticles2D" parent="." unique_id=923721242]
+position = Vector2(990, -4)
+amount = 600
+texture = ExtResource("3_dqswm")
+lifetime = 32.41
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_vbu4v")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
