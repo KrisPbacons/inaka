@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Inaka"
 run/main_scene="uid://dorbasxh4nnbv"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/image="uid://caplrhu3nmibj"
 config/icon="res://icon.svg"
 

@@ -148,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpjfl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 9.0
 }, {
@@ -177,7 +177,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_igrcy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 9.0
 }, {
@@ -194,7 +194,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qpa8y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_down",
 "speed": 5.0
 }, {
@@ -214,7 +214,7 @@ animations = [{
 "duration": 0.1,
 "texture": SubResource("AtlasTexture_bi64h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 5.0
 }, {
@@ -234,7 +234,7 @@ animations = [{
 "duration": 0.1,
 "texture": SubResource("AtlasTexture_vfarp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 5.0
 }, {
@@ -251,7 +251,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yh6i2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_up",
 "speed": 5.0
 }]
@@ -276,12 +276,11 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=374556680]
 y_sort_enabled = true
-position = Vector2(7, -25.000004)
-scale = Vector2(0.2040433, 0.19001889)
+position = Vector2(18.41097, -56)
+scale = Vector2(0.30818564, 0.28372458)
 sprite_frames = SubResource("SpriteFrames_x3wgy")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.96380347
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1625809246]
 y_sort_enabled = true
@@ -289,8 +288,8 @@ position = Vector2(6, 12)
 shape = SubResource("CapsuleShape2D_3smsa")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=111870859]
-position = Vector2(6, -22.000002)
-scale = Vector2(1.4062501, 1.5625001)
+position = Vector2(6.499998, -19.499992)
+scale = Vector2(1.4218751, 1.4843751)
 color = Color(0.74701077, 0.104581855, 0.2494821, 1)
 energy = 1.32
 texture = SubResource("GradientTexture2D_3smsa")
