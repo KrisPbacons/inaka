@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://7li1y8ftgx7d"]
 
 [ext_resource type="Script" uid="uid://bdeb0nxhi2t6x" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Resource" uid="uid://ns5v83jm2i4e" path="res://Inventory/playerinv.tres" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://gis1bakqj8u2" path="res://Assets/Sprites_Tiles/ninja/Run.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://dj0cxn2e1881n" path="res://Assets/Sprites_Tiles/itachi_idle.png" id="2_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://8ma4tf5mnbfq" path="res://Assets/Sprites_Tiles/itachi_tileset_walking_down_up.png" id="5_3smsa"]
 [ext_resource type="Texture2D" uid="uid://ckcrqpcbferg8" path="res://Assets/Sprites_Tiles/itachi_tileset.png" id="5_fkybt"]
 [ext_resource type="Texture2D" uid="uid://dcgacgavn3v2q" path="res://Assets/Sprites_Tiles/itachi_tileset_walking_down_up2.png" id="6_8erm5"]
+[ext_resource type="PackedScene" uid="uid://dfp5kttu4ricy" path="res://Inventory/inv_ui.tscn" id="8_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
 atlas = ExtResource("2_x3wgy")
@@ -273,6 +275,7 @@ fill_from = Vector2(0.51452994, 0.46324787)
 y_sort_enabled = true
 collision_mask = 2
 script = ExtResource("1_cvnsp")
+inv = ExtResource("2_3smsa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=374556680]
 y_sort_enabled = true
@@ -293,3 +296,11 @@ scale = Vector2(1.4218751, 1.4843751)
 color = Color(0.74701077, 0.104581855, 0.2494821, 1)
 energy = 1.32
 texture = SubResource("GradientTexture2D_3smsa")
+
+[node name="Inv_UI" parent="." unique_id=1704684679 instance=ExtResource("8_8erm5")]
+z_index = 1
+custom_minimum_size = Vector2(228, 180)
+offset_left = 32.0
+offset_top = -286.0
+offset_right = 266.0
+offset_bottom = -106.0

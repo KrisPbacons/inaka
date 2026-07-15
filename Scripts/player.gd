@@ -1,5 +1,11 @@
 extends CharacterBody2D
 
+signal stick_collected
+signal apple_collected
+signal slime_collected
+
+@export var inv: Inv
+
 enum State {IDLE, MOVE}
 var current_state = State.IDLE
 
@@ -51,5 +57,8 @@ func perform_state_actions(delta):
 			if animated_sprite_2d.animation == "walk_down":
 				animated_sprite_2d.animation = "idle"
 	
-#func player():
-	#pass
+func player():
+	pass
+	
+func collect(item):
+	inv.insert(item)

@@ -3,6 +3,10 @@ extends Area2D
 signal point_touched
 @onready var point_item_audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var light: PointLight2D = $PointLight2D
+@export var item: InvItem
+
+var apple = preload("res://Scenes/point_item.tscn")
+var player = null
 
 func _ready() -> void:
 	var tween = create_tween().set_loops()
@@ -11,13 +15,17 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == 'player':
+		player = body
 		var tween = create_tween()
-		
 		point_item_audio.play()
 		point_touched.emit()
+		
+		player.collect(item)
+		print("Item collected")
 		
 		tween.set_parallel(true)
 		tween.tween_property(self, "position", position + Vector2(0,-10), 0.3)
 		tween.tween_property(self, "modulate:a",0.0, 0.3)
 		tween.tween_property(light, "energy",0.0, 0.2)
 		tween.chain().tween_callback(self.queue_free)
+		

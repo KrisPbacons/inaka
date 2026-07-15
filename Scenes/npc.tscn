@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cktimww2v40p4" path="res://Assets/Sprites_Tiles/animals/Hare_Idle.png" id="1_xxsvc"]
 [ext_resource type="Texture2D" uid="uid://rcnh3py2utos" path="res://Assets/Sprites_Tiles/animals/Hare_Run.png" id="2_g6unj"]
 [ext_resource type="PackedScene" uid="uid://07y6a16o6lhg" path="res://Scenes/dialogue.tscn" id="4_h1ryf"]
+[ext_resource type="PackedScene" uid="uid://cky02dv5cpksn" path="res://Scenes/npc_quest.tscn" id="5_1ig1v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1ryf"]
 atlas = ExtResource("1_xxsvc")
@@ -132,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2xkex")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 7.0
 }, {
@@ -155,7 +156,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jcef7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_down",
 "speed": 8.0
 }, {
@@ -178,7 +179,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e2i2b")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 8.0
 }, {
@@ -201,7 +202,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bnwk7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 8.0
 }, {
@@ -224,28 +225,30 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7e4c4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_up",
 "speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hq1fa"]
-height = 32.0
+radius = 13.0
+height = 52.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eofwx"]
-radius = 40.012497
+radius = 52.009613
 
 [node name="npc" type="CharacterBody2D" unique_id=365864225]
 script = ExtResource("1_g6unj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=192985775]
-position = Vector2(4.7683716e-07, -4)
-scale = Vector2(2.1249998, 2.125)
+position = Vector2(0.9999962, 1)
+scale = Vector2(3.2812498, 3.09375)
 sprite_frames = SubResource("SpriteFrames_mr5be")
 animation = &"idle"
 frame_progress = 0.27583167
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2084083542]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_hq1fa")
 
@@ -265,7 +268,10 @@ offset_top = -172.0
 offset_right = -118.0
 offset_bottom = -172.0
 
+[node name="npc_quest" parent="." unique_id=2052203809 instance=ExtResource("5_1ig1v")]
+
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="dialogue_finished" from="dialogue" to="." method="_on_dialogue_dialogue_finished"]
+[connection signal="quest_menu_closed" from="npc_quest" to="." method="_on_npc_quest_quest_menu_closed"]

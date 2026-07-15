@@ -4,6 +4,7 @@ var plant = global.plantselected
 var plantgrowing = false
 var plant_grown = false
 
+@warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
 	if !plantgrowing:
 		plant = global.plantselected
