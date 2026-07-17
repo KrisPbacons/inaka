@@ -1333,6 +1333,7 @@ sprite_frames = SubResource("SpriteFrames_xrjrq")
 autoplay = "default"
 frame_progress = 0.8981056
 
+[connection signal="onion_collected" from="player" to="npc" method="_on_player_onion_collected"]
 [connection signal="point_touched" from="point1" to="player/Camera2D/ui" method="_on_point_1_point_touched"]
 [connection signal="point_touched" from="point2" to="player/Camera2D/ui" method="_on_point_1_point_touched"]
 [connection signal="point_touched" from="point3" to="player/Camera2D/ui" method="_on_point_1_point_touched"]

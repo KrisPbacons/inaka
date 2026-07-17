@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal stick_collected
+signal onion_collected
 signal apple_collected
 signal slime_collected
 
@@ -62,3 +62,14 @@ func player():
 	
 func collect(item):
 	inv.insert(item)
+	print(item)
+	if str(item) == "(res://Inventory/Items/onion.tres):<Resource#-9223371991237523776>": #onion
+		print("picked up onion")
+		emit_signal("onion_collected")
+	elif str(item) == "(res://Inventory/Items/apple.tres):<Resource#-9223371997327653271>": #apple
+		print("picked up apple")
+		emit_signal("apple_collected")
+	#if str(item) == "(res://Inventory/Items/apple.tres):<Resource#-9223371997327653271>": #slime
+		#print("picked up apple")
+		#emit_signal("apple_collected")
+		

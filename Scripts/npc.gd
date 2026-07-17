@@ -9,12 +9,20 @@ var player
 var player_in_chat_zone = false
 var dir = Vector2.RIGHT
 var start_pos
+var min_x = 0
+var max_x = 500
+var min_y = 0
+var max_y = 500
 
 func _ready() -> void:
 	randomize()
 	start_pos = position
 
 func _process(delta: float) -> void:
+	# Force the sprite's position to stay within the area
+	position.x = clamp(position.x, min_x, max_x)
+	position.y = clamp(position.y, min_y, max_y)
+	
 	if global.weather == "rain":
 		$AnimatedSprite2D.visible = false
 		is_roaming = false
@@ -48,7 +56,8 @@ func _process(delta: float) -> void:
 		is_roaming = false
 		is_chatting = true
 		$AnimatedSprite2D.play("idle")
-	if Input.is_action_just_pressed("quest"):
+		
+	if Input.is_action_just_pressed("quest") && player_in_chat_zone && !is_chatting:
 		print("quest started")
 		$npc_quest.next_quest()
 		is_roaming = false
@@ -86,3 +95,6 @@ func _on_dialogue_dialogue_finished() -> void:
 func _on_npc_quest_quest_menu_closed() -> void:
 	is_chatting = false
 	is_roaming = true
+
+func _on_player_onion_collected() -> void:
+	$npc_quest.onion_collected()

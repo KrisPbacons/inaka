@@ -18,6 +18,7 @@ offset_bottom = 40.0
 script = ExtResource("1_t1sy6")
 
 [node name="quest1_ui" type="NinePatchRect" parent="." unique_id=104146526]
+visible = false
 layout_mode = 0
 offset_right = 258.0
 offset_bottom = 134.0
@@ -119,6 +120,35 @@ offset_right = 248.0
 offset_bottom = 127.0
 theme_override_colors/default_color = Color(0.96875566, 0.36762744, 0.78800523, 1)
 text = "Good Boy!"
+
+[node name="quest_in_progress" type="NinePatchRect" parent="." unique_id=1351554048]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 258.0
+offset_bottom = 134.0
+texture = SubResource("GradientTexture2D_ud3dn")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="name" type="RichTextLabel" parent="quest_in_progress" unique_id=1070895214]
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 26.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Worker:"
+
+[node name="text" type="RichTextLabel" parent="quest_in_progress" unique_id=1492287491]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 248.0
+offset_bottom = 127.0
+theme_override_colors/default_color = Color(0.96875566, 0.36762744, 0.78800523, 1)
+text = "You`re already on a quest!"
 
 [connection signal="pressed" from="quest1_ui/yesButton1" to="." method="_on_yes_button_1_pressed"]
 [connection signal="pressed" from="quest1_ui/noButton1" to="." method="_on_no_button_1_pressed"]

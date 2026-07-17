@@ -19,9 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 		var tween = create_tween()
 		point_item_audio.play()
 		point_touched.emit()
-		
 		player.collect(item)
-		print("Item collected")
 		
 		tween.set_parallel(true)
 		tween.tween_property(self, "position", position + Vector2(0,-10), 0.3)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://c0ywdt11h8h0v"]
+
+[ext_resource type="Script" uid="uid://bn86y5cavg3cc" path="res://Scripts/inventory_item.gd" id="1_qy33w"]
+[ext_resource type="Texture2D" uid="uid://bysgj532akpvr" path="res://Assets/Sprites_Tiles/onion_grown.png" id="2_tbbtb"]
+
+[resource]
+script = ExtResource("1_qy33w")
+name = "onion"
+texture = ExtResource("2_tbbtb")
+metadata/_custom_type_script = "uid://bn86y5cavg3cc"

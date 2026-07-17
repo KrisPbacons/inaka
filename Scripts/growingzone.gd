@@ -3,6 +3,9 @@ extends StaticBody2D
 var plant = global.plantselected
 var plantgrowing = false
 var plant_grown = false
+@export var item: InvItem
+var player = null
+var onion = preload("res://Inventory/Items/onion.tres")
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
@@ -59,3 +62,25 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				pass
 		print(global.numofcarrots)
 		print(global.numofonions)
+			
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	player = body
+	if body.name == 'player':
+		if plant_grown == true:
+			if plant == 1:
+				playercollect()
+				global.numofcarrots += 1
+				plantgrowing = false
+				plant_grown = false
+				$plant.play("none")
+			elif plant == 2:
+				playercollect()
+				global.numofonions += 1
+				plantgrowing = false
+				plant_grown = false
+				$plant.play("none")
+			else:
+				pass
+
+func playercollect():
+	player.collect(item)

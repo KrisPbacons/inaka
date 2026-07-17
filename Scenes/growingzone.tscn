@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5yvq2sa88dq6" path="res://Scripts/growingzone.gd" id="1_wpk8d"]
 [ext_resource type="Texture2D" uid="uid://d1uqbmcrclda7" path="res://Assets/Sprites_Tiles/farmingTilesheetComplete.png" id="2_2ov6t"]
+[ext_resource type="Resource" uid="uid://c0ywdt11h8h0v" path="res://Inventory/Items/onion.tres" id="2_f1mhg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1mhg"]
 atlas = ExtResource("2_2ov6t")
@@ -13,7 +14,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f1mhg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -61,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q0x83")
 }],
-"loop": true,
+"loop": 1,
 "name": &"carrotgrowing",
 "speed": 0.0
 }, {
@@ -69,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpk8d")
 }],
-"loop": true,
+"loop": 1,
 "name": &"none",
 "speed": 5.0
 }, {
@@ -83,13 +84,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jwpcd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"oniongrowing",
 "speed": 0.0
 }]
 
 [node name="growingzone" type="StaticBody2D" unique_id=426530720]
 script = ExtResource("1_wpk8d")
+item = ExtResource("2_f1mhg")
 
 [node name="hoedland" type="AnimatedSprite2D" parent="." unique_id=1060609164]
 position = Vector2(102, 104.5)
@@ -115,6 +117,7 @@ wait_time = 5.0
 wait_time = 5.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="oniongrowtimer" to="." method="_on_oniongrowtimer_timeout"]
 [connection signal="timeout" from="carrotgrowtimer" to="." method="_on_carrotgrowtimer_timeout"]
