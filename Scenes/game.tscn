@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://damfk3s84c1r1" path="res://Scenes/carrotseedpack.tscn" id="13_nb51f"]
 [ext_resource type="Texture2D" uid="uid://7xca678ctd4j" path="res://Assets/Sprites_Tiles/Waves.png" id="14_1phco"]
 [ext_resource type="Texture2D" uid="uid://cqjsphvq7suvj" path="res://Assets/Sprites_Tiles/river_animation.png" id="15_nb51f"]
+[ext_resource type="Script" uid="uid://d1unx1kco8nj4" path="res://Scripts/canvas_modulate.gd" id="16_ewbju"]
+[ext_resource type="PackedScene" uid="uid://cl34yosqltxg3" path="res://Scenes/daynightcycle.tscn" id="16_nnt18"]
+[ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/daynightcycle-gradient-texture.tres" id="17_85qyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldgsr"]
 texture = ExtResource("5_wowpa")
@@ -1221,7 +1224,7 @@ scale = Vector2(2, 2)
 collision_mask = 1
 
 [node name="weather_control" parent="player" unique_id=142798669 instance=ExtResource("10_ldgsr")]
-position = Vector2(-535.5, -298.5)
+position = Vector2(-1459.5, -427.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=98265043]
@@ -1332,6 +1335,15 @@ scale = Vector2(2.0000005, 2.334375)
 sprite_frames = SubResource("SpriteFrames_xrjrq")
 autoplay = "default"
 frame_progress = 0.8981056
+
+[node name="daynightcycle" parent="." unique_id=1965913999 instance=ExtResource("16_nnt18")]
+visible = false
+z_index = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1734697913]
+script = ExtResource("16_ewbju")
+gradient = ExtResource("17_85qyi")
+INGAME_SPEED = 20.0
 
 [connection signal="onion_collected" from="player" to="npc" method="_on_player_onion_collected"]
 [connection signal="point_touched" from="point1" to="player/Camera2D/ui" method="_on_point_1_point_touched"]

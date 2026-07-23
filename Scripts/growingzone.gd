@@ -6,6 +6,7 @@ var plant_grown = false
 @export var item: InvItem
 var player = null
 var onion = preload("res://Inventory/Items/onion.tres")
+var carrot = preload("res://Inventory/Items/carrot.tres")
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
@@ -23,8 +24,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			plantgrowing = true
 			$oniongrowtimer.start()
 			$plant.play("oniongrowing")
-		else:
-			print("plant already growing")
+	else:
+		print("plant already growing")
 			
 func _on_carrotgrowtimer_timeout() -> void:
 	var carrot_plant = $plant
@@ -83,4 +84,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				pass
 
 func playercollect():
-	player.collect(item)
+	if plant == 1:
+		item = carrot
+		player.collect(item)
+	elif plant == 2:
+		item = onion
+		player.collect(item)
