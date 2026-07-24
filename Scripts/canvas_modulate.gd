@@ -1,8 +1,9 @@
 extends CanvasModulate
 
 @export var gradient: GradientTexture1D
-@export var INGAME_SPEED = 5.0
-@export var INITIAL_HOUR = 12
+@export var INGAME_SPEED = 2.0
+@export var INITIAL_HOUR = 10
+@onready var sound = $AudioStreamPlayer2D
 
 signal time_tick(day:int, hour:int, minute:int)
 const MINUTES_PER_DAY = 1440
@@ -13,7 +14,8 @@ var time: float = 0.0
 var past_minute:float = -1.0
 
 func _ready() -> void:
-	time = INAGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR#* INITIAL_HOUR 
+	time = INAGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR * INITIAL_HOUR 
+	self.sound
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

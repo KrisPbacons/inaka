@@ -18,6 +18,10 @@
 [ext_resource type="Script" uid="uid://d1unx1kco8nj4" path="res://Scripts/canvas_modulate.gd" id="16_ewbju"]
 [ext_resource type="PackedScene" uid="uid://cl34yosqltxg3" path="res://Scenes/daynightcycle.tscn" id="16_nnt18"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/daynightcycle-gradient-texture.tres" id="17_85qyi"]
+[ext_resource type="AudioStream" uid="uid://burchb73n03f3" path="res://Assets/audio/howlingwolf.ogg" id="19_7t8sx"]
+[ext_resource type="AudioStream" uid="uid://uqkkv8assy2m" path="res://Assets/audio/morningcrow.ogg" id="20_mg4q0"]
+[ext_resource type="AudioStream" uid="uid://wcouc0qkyjf4" path="res://Assets/audio/creepy-soundscape.ogg" id="21_vm72l"]
+[ext_resource type="AudioStream" uid="uid://csft2vj1iddwn" path="res://Assets/audio/nature-soundscape.ogg" id="22_22asu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldgsr"]
 texture = ExtResource("5_wowpa")
@@ -1214,6 +1218,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_7t8sx"]
+shuffle = true
+loop = false
+fade_time = 0.5
+stream_count = 4
+stream_0 = ExtResource("22_22asu")
+stream_1 = ExtResource("21_vm72l")
+stream_2 = ExtResource("20_mg4q0")
+stream_3 = ExtResource("19_7t8sx")
+
 [node name="game" type="Node2D" unique_id=1679600723]
 y_sort_enabled = true
 
@@ -1343,7 +1357,10 @@ z_index = 2
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1734697913]
 script = ExtResource("16_ewbju")
 gradient = ExtResource("17_85qyi")
-INGAME_SPEED = 20.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasModulate" unique_id=1756475782]
+stream = SubResource("AudioStreamPlaylist_7t8sx")
+autoplay = true
 
 [connection signal="onion_collected" from="player" to="npc" method="_on_player_onion_collected"]
 [connection signal="point_touched" from="point1" to="player/Camera2D/ui" method="_on_point_1_point_touched"]
