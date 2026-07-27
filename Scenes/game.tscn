@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://uqkkv8assy2m" path="res://Assets/audio/morningcrow.ogg" id="20_mg4q0"]
 [ext_resource type="AudioStream" uid="uid://wcouc0qkyjf4" path="res://Assets/audio/creepy-soundscape.ogg" id="21_vm72l"]
 [ext_resource type="AudioStream" uid="uid://csft2vj1iddwn" path="res://Assets/audio/nature-soundscape.ogg" id="22_22asu"]
+[ext_resource type="PackedScene" uid="uid://ijja3u5ukyw7" path="res://Scenes/in_game_ui.tscn" id="23_mg4q0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldgsr"]
 texture = ExtResource("5_wowpa")
@@ -1361,6 +1362,12 @@ gradient = ExtResource("17_85qyi")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasModulate" unique_id=1756475782]
 stream = SubResource("AudioStreamPlaylist_7t8sx")
 autoplay = true
+
+[node name="inGameUI" parent="." unique_id=485416035 instance=ExtResource("23_mg4q0")]
+offset_left = -105.0
+offset_top = 497.0
+offset_right = 105.0
+offset_bottom = 558.0
 
 [connection signal="onion_collected" from="player" to="npc" method="_on_player_onion_collected"]
 [connection signal="point_touched" from="point1" to="player/Camera2D/ui" method="_on_point_1_point_touched"]

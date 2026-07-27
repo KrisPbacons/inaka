@@ -1,0 +1,502 @@
+[gd_scene format=3 uid="uid://ijja3u5ukyw7"]
+
+[ext_resource type="Texture2D" uid="uid://dsdrxbaw402lo" path="res://Assets/Menu/Sprite sheet for Basic Pack.png" id="1_5x6se"]
+[ext_resource type="Script" uid="uid://5ihp5ib855l3" path="res://Scripts/popup_menu_manager.gd" id="1_t3gp5"]
+[ext_resource type="Texture2D" uid="uid://bt8x1ty73bhja" path="res://Assets/Menu/modifided version of the sprite sheet.png" id="2_ey7ub"]
+[ext_resource type="FontFile" uid="uid://dxe4yqkbjd3cs" path="res://Fonts/ToyBox.ttf" id="4_orthm"]
+[ext_resource type="Texture2D" uid="uid://disct14om1gyi" path="res://Assets/Sprites_Tiles/slime-icon.png" id="5_orthm"]
+[ext_resource type="Texture2D" uid="uid://bn0lk6g6slgy4" path="res://Assets/Menu/audio-off-icon.png" id="6_s8663"]
+[ext_resource type="Texture2D" uid="uid://d1dpatol1nt7u" path="res://Assets/Menu/audio-on-icon.png" id="7_cpmi5"]
+[ext_resource type="Texture2D" uid="uid://nyquh0c6suar" path="res://Assets/Menu/brightness-off-icon.png" id="8_6ra50"]
+[ext_resource type="Texture2D" uid="uid://d4d67wsih6u8w" path="res://Assets/Menu/brightness-on-icon.png" id="9_canx1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqbl7"]
+texture = ExtResource("1_5x6se")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(626, 230, 12, 4)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ey7ub"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(709, 164, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gtfj6"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(741, 166, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2scbo"]
+texture = ExtResource("2_ey7ub")
+region_rect = Rect2(645, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8u46o"]
+texture = ExtResource("2_ey7ub")
+region_rect = Rect2(677, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3gp5"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(645, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_orthm"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(677, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ovgp"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(772, 163, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfbn1"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(804, 165, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xrjrq"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8663"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(869, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwyif"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(869, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_canx1"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(277, 166, 38, 4)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybrcd"]
+content_margin_left = 20.0
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(277, 133, 7, 18)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1tpb"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(309, 133, 7, 18)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ge35s"]
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(277, 166, 38, 4)
+
+[node name="inGameUI" type="Control" unique_id=485416035]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="popupMenu" type="MarginContainer" parent="." unique_id=610965787 node_paths=PackedStringArray("menu_screen", "open_menu_screen", "help_menu_screen", "settings_menu_screen")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t3gp5")
+menu_screen = NodePath("baseMenuScreenContainer")
+open_menu_screen = NodePath("baseMenuOpenButtonContainer")
+help_menu_screen = NodePath("helpMenuContainer")
+settings_menu_screen = NodePath("settingsMenuContainer")
+
+[node name="baseMenuScreenContainer" type="VBoxContainer" parent="popupMenu" unique_id=1827656803]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+
+[node name="baseMenuScreen" type="MarginContainer" parent="popupMenu/baseMenuScreenContainer" unique_id=1519127168]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen" unique_id=1833988159]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="toggleMenuButton" type="Button" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer" unique_id=913339083]
+custom_minimum_size = Vector2(50, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_pqbl7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pqbl7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pqbl7")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer" unique_id=493581972]
+custom_minimum_size = Vector2(350, 160)
+layout_mode = 2
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(741, 38, 22, 22)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect" unique_id=899877793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="buttonContainer" type="VBoxContainer" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer" unique_id=1151256229]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="topButtonContainer" type="HBoxContainer" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer" unique_id=106899282]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="toggleHelpMenuButton" type="Button" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer" unique_id=100417712]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_ey7ub")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gtfj6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gtfj6")
+
+[node name="pauseButton" type="Button" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer" unique_id=1677131148]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_2scbo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8u46o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8u46o")
+
+[node name="bottomButtonContainer2" type="HBoxContainer" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer" unique_id=1023101211]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="settingsButton" type="Button" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2" unique_id=2022628997]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_t3gp5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_orthm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_orthm")
+
+[node name="quitButton2" type="Button" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2" unique_id=1699541900]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ovgp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dfbn1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dfbn1")
+
+[node name="statDisplayContainer" type="VBoxContainer" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer" unique_id=1255829264]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="coinDisplay" type="Label" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/statDisplayContainer" unique_id=660032266]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+theme_override_colors/font_outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_orthm")
+theme_override_font_sizes/font_size = 35
+text = "COINS:"
+
+[node name="scoreDisplay" type="Label" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/statDisplayContainer" unique_id=1523847681]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+theme_override_colors/font_outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_orthm")
+theme_override_font_sizes/font_size = 35
+text = "SCORE:"
+
+[node name="seperator" type="Control" parent="popupMenu/baseMenuScreenContainer" unique_id=568491670]
+layout_mode = 2
+
+[node name="baseMenuOpenButtonContainer" type="VBoxContainer" parent="popupMenu" unique_id=336831613]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="toggleMenuButton" type="Button" parent="popupMenu/baseMenuOpenButtonContainer" unique_id=2099609135]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_pqbl7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pqbl7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pqbl7")
+
+[node name="seperator2" type="Control" parent="popupMenu/baseMenuOpenButtonContainer" unique_id=1736048025]
+layout_mode = 2
+
+[node name="helpMenuContainer" type="MarginContainer" parent="popupMenu" unique_id=1939733494]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="popupMenu/helpMenuContainer" unique_id=1652946827]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(742, 7, 18, 18)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="title" type="HBoxContainer" parent="popupMenu/helpMenuContainer" unique_id=724078707]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Control" type="Control" parent="popupMenu/helpMenuContainer/title" unique_id=825658234]
+layout_mode = 2
+
+[node name="helpDisplay" type="Label" parent="popupMenu/helpMenuContainer/title" unique_id=1782082180]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+theme_override_colors/font_outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_orthm")
+theme_override_font_sizes/font_size = 35
+text = "How to play"
+
+[node name="MarginContainer" type="MarginContainer" parent="popupMenu/helpMenuContainer" unique_id=29956044]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/helpMenuContainer/MarginContainer" unique_id=1813049722]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="popupMenu/helpMenuContainer/MarginContainer/VBoxContainer" unique_id=928141902]
+layout_mode = 2
+theme_override_constants/separation = -14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/helpMenuContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1005453621]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="text1Display" type="Label" parent="popupMenu/helpMenuContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=837847673]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+theme_override_colors/font_outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_orthm")
+theme_override_font_sizes/font_size = 14
+text = "Use the arrow keys to 
+move about the world 
+↑↓←→
+Walk over the apples to 
+pick them up 
+and add it to 
+your inventory
+"
+
+[node name="text1Display2" type="Label" parent="popupMenu/helpMenuContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1739150717]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+theme_override_colors/font_outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_orthm")
+theme_override_font_sizes/font_size = 14
+text = "Click the seed pack and 
+drag it over 
+the garden area to 
+start growing that crop
+Walk over the crop to 
+collect it and 
+add it to your inventory
+You can get quests 
+rom the Rabbit NPC
+"
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/helpMenuContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1612098020]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("5_orthm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="exitButton" type="VBoxContainer" parent="popupMenu/helpMenuContainer" unique_id=2085156977]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="popupMenu/helpMenuContainer/exitButton" unique_id=1914063118]
+layout_mode = 2
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = 3
+
+[node name="toggleHelpMenuButton" type="Button" parent="popupMenu/helpMenuContainer/exitButton/MarginContainer" unique_id=1835160429]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_xrjrq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s8663")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dwyif")
+
+[node name="settingsMenuContainer" type="MarginContainer" parent="popupMenu" unique_id=1117572980]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="popupMenu/settingsMenuContainer" unique_id=730958227]
+layout_mode = 2
+texture = ExtResource("1_5x6se")
+region_rect = Rect2(741, 38, 22, 22)
+patch_margin_left = 3
+patch_margin_top = 2
+patch_margin_right = 3
+patch_margin_bottom = 2
+
+[node name="title" type="HBoxContainer" parent="popupMenu/settingsMenuContainer" unique_id=873547829]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="popupMenu/settingsMenuContainer/title" unique_id=1599889763]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.63110214, 0.49508405, 0.30611992, 1)
+theme_override_colors/font_outline_color = Color(0.12424017, 0.067801334, 0.061830662, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_orthm")
+theme_override_font_sizes/font_size = 101
+text = "Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/settingsMenuContainer" unique_id=1830865914]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Control" type="Control" parent="popupMenu/settingsMenuContainer/VBoxContainer" unique_id=513647617]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer" unique_id=360860516]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="volumeBar" type="HBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer" unique_id=1151241138]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar" unique_id=1803056877]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar/VBoxContainer" unique_id=15850322]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_s8663")
+
+[node name="HScrollBar" type="HScrollBar" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar" unique_id=1150838432]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/scroll = SubResource("StyleBoxTexture_canx1")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_ybrcd")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_k1tpb")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_k1tpb")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar" unique_id=84174147]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar/VBoxContainer2" unique_id=886074848]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_cpmi5")
+
+[node name="brightnessBar" type="HBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer" unique_id=1314664071]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=2019301302]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=331615270]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar/VBoxContainer" unique_id=849441852]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_6ra50")
+
+[node name="HScrollBar" type="HScrollBar" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=957656906]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/scroll = SubResource("StyleBoxTexture_ge35s")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=306380503]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar/VBoxContainer2" unique_id=1343034921]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_canx1")
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=1775805690]
+layout_mode = 2
+
+[node name="exitButton" type="VBoxContainer" parent="popupMenu/settingsMenuContainer" unique_id=1413092026]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="popupMenu/settingsMenuContainer/exitButton" unique_id=2007849118]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = 3
+
+[node name="toggleExitMenuButton" type="Button" parent="popupMenu/settingsMenuContainer/exitButton/MarginContainer" unique_id=415167811]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_xrjrq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s8663")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dwyif")
+
+[connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/toggleMenuButton" to="popupMenu" method="_on_toggle_menu_button_pressed"]
+[connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer/toggleHelpMenuButton" to="popupMenu" method="_on_toggle_help_menu_button_pressed"]
+[connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2/settingsButton" to="popupMenu" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="popupMenu/baseMenuOpenButtonContainer/toggleMenuButton" to="popupMenu" method="_on_toggle_menu_button_pressed"]
+[connection signal="pressed" from="popupMenu/helpMenuContainer/exitButton/MarginContainer/toggleHelpMenuButton" to="popupMenu" method="_on_toggle_help_menu_button_pressed"]
+[connection signal="pressed" from="popupMenu/settingsMenuContainer/exitButton/MarginContainer/toggleExitMenuButton" to="popupMenu" method="_on_toggle_exit_menu_button_pressed"]
