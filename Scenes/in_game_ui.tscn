@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://d1dpatol1nt7u" path="res://Assets/Menu/audio-on-icon.png" id="7_cpmi5"]
 [ext_resource type="Texture2D" uid="uid://nyquh0c6suar" path="res://Assets/Menu/brightness-off-icon.png" id="8_6ra50"]
 [ext_resource type="Texture2D" uid="uid://d4d67wsih6u8w" path="res://Assets/Menu/brightness-on-icon.png" id="9_canx1"]
+[ext_resource type="Shader" uid="uid://bdmtbst11h6sl" path="res://in_game_ui.gdshader" id="10_cpmi5"]
+[ext_resource type="Texture2D" uid="uid://o5xkoihcpa63" path="res://Icons/white icons.png" id="11_6ra50"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2scbo"]
+shader = ExtResource("10_cpmi5")
+shader_parameter/lod = 0.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqbl7"]
 texture = ExtResource("1_5x6se")
@@ -71,17 +77,145 @@ region_rect = Rect2(277, 166, 38, 4)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybrcd"]
 content_margin_left = 20.0
 texture = ExtResource("1_5x6se")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 region_rect = Rect2(277, 133, 7, 18)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1tpb"]
 texture = ExtResource("1_5x6se")
-region_rect = Rect2(309, 133, 7, 18)
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(293, 133, 7, 18)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ge35s"]
-texture = ExtResource("1_5x6se")
-region_rect = Rect2(277, 166, 38, 4)
+[sub_resource type="Animation" id="Animation_6ra50"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelContainer:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_canx1"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0.94500005, -0.15, 0, 0.15, 0, 0.94500005, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelContainer:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 1, -0.050000004, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ybrcd"]
+_data = {
+&"RESET": SubResource("Animation_6ra50"),
+&"blur": SubResource("Animation_canx1")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u46o"]
+atlas = ExtResource("11_6ra50")
+region = Rect2(50, 35, 13, 10)
 
 [node name="inGameUI" type="Control" unique_id=485416035]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,6 +235,19 @@ menu_screen = NodePath("baseMenuScreenContainer")
 open_menu_screen = NodePath("baseMenuOpenButtonContainer")
 help_menu_screen = NodePath("helpMenuContainer")
 settings_menu_screen = NodePath("settingsMenuContainer")
+audio_bus_name = "Music"
+
+[node name="PanelContainer" type="PanelContainer" parent="popupMenu" unique_id=1676515515]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="popupMenu/PanelContainer" unique_id=907273988]
+material = SubResource("ShaderMaterial_2scbo")
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu/PanelContainer" unique_id=65881322]
+layout_mode = 2
 
 [node name="baseMenuScreenContainer" type="VBoxContainer" parent="popupMenu" unique_id=1827656803]
 visible = false
@@ -232,6 +379,7 @@ size_flags_vertical = 8
 theme_override_constants/separation = 20
 
 [node name="toggleMenuButton" type="Button" parent="popupMenu/baseMenuOpenButtonContainer" unique_id=2099609135]
+visible = false
 custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -423,6 +571,9 @@ theme_override_styles/scroll = SubResource("StyleBoxTexture_canx1")
 theme_override_styles/grabber = SubResource("StyleBoxTexture_ybrcd")
 theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_k1tpb")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_k1tpb")
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar" unique_id=84174147]
 layout_mode = 2
@@ -455,11 +606,18 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("8_6ra50")
 
-[node name="HScrollBar" type="HScrollBar" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=957656906]
+[node name="HScrollBar2" type="HScrollBar" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=1044127187]
 custom_minimum_size = Vector2(500, 30)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/scroll = SubResource("StyleBoxTexture_ge35s")
+theme_override_styles/scroll = SubResource("StyleBoxTexture_canx1")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_ybrcd")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_k1tpb")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_k1tpb")
+min_value = 0.8
+max_value = 1.2
+value = 1.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar" unique_id=306380503]
 layout_mode = 2
@@ -494,9 +652,25 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xrjrq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s8663")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dwyif")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="popupMenu" unique_id=1705559411]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_ybrcd")
+
+[node name="PopupMenu" type="PopupMenu" parent="." unique_id=1453622190]
+
+[node name="Button" type="Button" parent="PopupMenu" unique_id=664333499]
+offset_right = 97.0
+offset_bottom = 100.0
+icon = SubResource("AtlasTexture_8u46o")
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/toggleMenuButton" to="popupMenu" method="_on_toggle_menu_button_pressed"]
 [connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer/toggleHelpMenuButton" to="popupMenu" method="_on_toggle_help_menu_button_pressed"]
 [connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2/settingsButton" to="popupMenu" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2/quitButton2" to="popupMenu" method="_on_quit_button_2_pressed"]
 [connection signal="pressed" from="popupMenu/baseMenuOpenButtonContainer/toggleMenuButton" to="popupMenu" method="_on_toggle_menu_button_pressed"]
 [connection signal="pressed" from="popupMenu/helpMenuContainer/exitButton/MarginContainer/toggleHelpMenuButton" to="popupMenu" method="_on_toggle_help_menu_button_pressed"]
+[connection signal="value_changed" from="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar/HScrollBar" to="popupMenu" method="_on_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/brightnessBar/HScrollBar2" to="popupMenu" method="_on_h_scroll_bar_2_value_changed"]
 [connection signal="pressed" from="popupMenu/settingsMenuContainer/exitButton/MarginContainer/toggleExitMenuButton" to="popupMenu" method="_on_toggle_exit_menu_button_pressed"]

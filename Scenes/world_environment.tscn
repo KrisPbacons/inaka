@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b7syntn2tupvi"]
+
+[sub_resource type="Environment" id="Environment_2scbo"]
+background_mode = 3
+background_energy_multiplier = 0.5
+adjustment_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=1939236169]
+environment = SubResource("Environment_2scbo")
