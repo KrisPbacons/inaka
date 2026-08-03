@@ -48,9 +48,9 @@ Future updates will introduce farming, quests, relationships, tourism, economy m
 - [x] Inventory system
 - [x] Farming mechanics
 - [ ] Building placement
-- [ ] Quest system
+- [x] Quest system
 - [ ] Relationship system
-- [ ] Day/Night cycle
+- [x] Day/Night cycle
 - [ ] Seasons and weather
 - [ ] Tourism management
 - [ ] Economy simulation
