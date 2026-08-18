@@ -346,6 +346,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_2ovgp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dfbn1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dfbn1")
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer" unique_id=856491198]
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Do you want to Quit?"
+initial_position = 1
+ok_button_text = "YES"
+cancel_button_text = "NO"
+
 [node name="statDisplayContainer" type="VBoxContainer" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer" unique_id=1255829264]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -657,6 +665,7 @@ process_mode = 3
 libraries/ = SubResource("AnimationLibrary_ybrcd")
 
 [node name="PopupMenu" type="PopupMenu" parent="." unique_id=1453622190]
+oversampling_override = 1.0
 
 [node name="Button" type="Button" parent="PopupMenu" unique_id=664333499]
 offset_right = 97.0

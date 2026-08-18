@@ -71,4 +71,9 @@ func _on_h_scroll_bar_2_value_changed(value: float) -> void:
 	WorldEnvironmentGlobal.environment.adjustment_brightness = value
 
 func _on_quit_button_2_pressed() -> void:
+	#get_tree().quit()
+	get_tree().set_auto_accept_quit(false)
+	#ConfirmationDialog.confirmed.connect(_on_confirmed)
+	
+func _on_confirmed() -> void:
 	get_tree().quit()
