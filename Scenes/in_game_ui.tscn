@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://5ihp5ib855l3" path="res://Scripts/popup_menu_manager.gd" id="1_t3gp5"]
 [ext_resource type="Texture2D" uid="uid://bt8x1ty73bhja" path="res://Assets/Menu/modifided version of the sprite sheet.png" id="2_ey7ub"]
 [ext_resource type="FontFile" uid="uid://dxe4yqkbjd3cs" path="res://Fonts/ToyBox.ttf" id="4_orthm"]
+[ext_resource type="FontFile" uid="uid://bo087fa0crlww" path="res://Fonts/pixelFont-7-8x14-sproutLands.ttf" id="5_canx1"]
 [ext_resource type="Texture2D" uid="uid://disct14om1gyi" path="res://Assets/Sprites_Tiles/slime-icon.png" id="5_orthm"]
 [ext_resource type="Texture2D" uid="uid://bn0lk6g6slgy4" path="res://Assets/Menu/audio-off-icon.png" id="6_s8663"]
 [ext_resource type="Texture2D" uid="uid://d1dpatol1nt7u" path="res://Assets/Menu/audio-on-icon.png" id="7_cpmi5"]
@@ -55,6 +56,10 @@ region_rect = Rect2(772, 163, 22, 24)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfbn1"]
 texture = ExtResource("1_5x6se")
 region_rect = Rect2(804, 165, 22, 22)
+
+[sub_resource type="Theme" id="Theme_6ra50"]
+default_font = ExtResource("5_canx1")
+default_font_size = 30
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xrjrq"]
 texture = ExtResource("1_5x6se")
@@ -349,8 +354,12 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dfbn1")
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer" unique_id=856491198]
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
-title = "Do you want to Quit?"
-initial_position = 1
+title = "Are you sure?"
+initial_position = 2
+size = Vector2i(250, 100)
+always_on_top = true
+content_scale_factor = 1.15
+theme = SubResource("Theme_6ra50")
 ok_button_text = "YES"
 cancel_button_text = "NO"
 
@@ -678,6 +687,7 @@ expand_icon = true
 [connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer/toggleHelpMenuButton" to="popupMenu" method="_on_toggle_help_menu_button_pressed"]
 [connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2/settingsButton" to="popupMenu" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2/quitButton2" to="popupMenu" method="_on_quit_button_2_pressed"]
+[connection signal="confirmed" from="popupMenu/baseMenuScreenContainer/baseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/ConfirmationDialog" to="popupMenu" method="_on_confirmation_dialog_confirmed"]
 [connection signal="pressed" from="popupMenu/baseMenuOpenButtonContainer/toggleMenuButton" to="popupMenu" method="_on_toggle_menu_button_pressed"]
 [connection signal="pressed" from="popupMenu/helpMenuContainer/exitButton/MarginContainer/toggleHelpMenuButton" to="popupMenu" method="_on_toggle_help_menu_button_pressed"]
 [connection signal="value_changed" from="popupMenu/settingsMenuContainer/VBoxContainer/VBoxContainer/volumeBar/HScrollBar" to="popupMenu" method="_on_h_scroll_bar_value_changed"]
