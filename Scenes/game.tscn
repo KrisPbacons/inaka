@@ -4468,7 +4468,8 @@ y_sort_enabled = true
 z_index = 1
 position = Vector2(2, -1)
 scale = Vector2(2, 2)
-collision_mask = 1
+collision_layer = 3
+collision_mask = 3
 
 [node name="weather_control" parent="player" unique_id=142798669 instance=ExtResource("10_ldgsr")]
 position = Vector2(-1459.5, -427.5)
