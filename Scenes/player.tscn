@@ -273,7 +273,8 @@ fill_from = Vector2(0.51452994, 0.46324787)
 
 [node name="player" type="CharacterBody2D" unique_id=970433037]
 y_sort_enabled = true
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_cvnsp")
 inv = ExtResource("2_3smsa")
 

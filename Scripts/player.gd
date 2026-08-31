@@ -13,6 +13,9 @@ const SPEED = 19000.0
 var direction : Vector2
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+func _enter_tree() -> void:
+	global.player = self
+
 func _ready() -> void:
 	add_to_group("player")
 

@@ -20,17 +20,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6lvn"]
-radius = 44.011364
+radius = 80.024994
 
 [sub_resource type="LabelSettings" id="LabelSettings_2scbo"]
 font = ExtResource("3_a6lvn")
-font_size = 25
+font_size = 34
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="onionseedpack" type="StaticBody2D" unique_id=451731107]
 script = ExtResource("1_6on2u")
-interact_name = "seedpack"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=887599200]
 position = Vector2(59, 60.499996)
@@ -38,25 +37,24 @@ scale = Vector2(8.375, 8.5625)
 sprite_frames = SubResource("SpriteFrames_6on2u")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=6840591]
-z_index = 10
-collision_layer = 2
-collision_mask = 2
+y_sort_enabled = true
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1011372584]
 position = Vector2(57, 62)
 shape = SubResource("CircleShape2D_a6lvn")
 
 [node name="InteractLabel" type="Label" parent="Area2D" unique_id=1787806395]
-offset_left = -12.0
-offset_top = -30.0
-offset_right = 152.0
-offset_bottom = -1.0
-text = "E to Interact"
+visible = false
+offset_left = -77.0
+offset_top = -83.0
+offset_right = 262.0
+offset_bottom = 5.0
+text = "Hold E"
 label_settings = SubResource("LabelSettings_2scbo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://br30yvmb3qa51"
 
 global="*uid://rffqvwsa8xa"
 WorldEnvironmentGlobal="*uid://b7syntn2tupvi"
+SelectionManager="*uid://bvt5sth68jjx1"
 
 [display]
 
